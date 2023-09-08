@@ -2,19 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="MAIN" Id="{d0f4a2d8-aed2-4597-a76e-704570121f0f}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
-VAR
-	
-	//HMI Stuff
-	HMI_OUT_Digital 	: ARRAY[0..19] OF BOOL;
-	HMI_OUT_Analog 		: ARRAY[0..10] OF INT;
-	
-	HMI_IN_Digital 		: ARRAY[0..9] OF BOOL;
-	HMI_IN_Analog 		: ARRAY[0..19] OF INT;
-	
-	HMI_IN_Temp 		: ARRAY[0..4] OF REAL;
-	
-	
-	
+VAR	
 	//PLC Stuff
 	PLC_OUT_Digital 	AT %Q* 		: ARRAY[0..19] OF BOOL;
 	PLC_IN_Digital 		AT %I*		: ARRAY[0..9] OF BOOL;
@@ -26,9 +14,9 @@ VAR
 	
 	ExecWrite : BOOL;
 	WriteVal : ARRAY[0..9] OF INT := [1,2,3,4,5,6,7,8,9,10];
+		
 	
-	
-	
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -50,6 +38,7 @@ Master.WriteRegs(
 	ErrorId=> , 
 	cbRead=> );
 	
+
 	
 ]]></ST>
     </Implementation>
@@ -57,8 +46,8 @@ Master.WriteRegs(
       <LineId Id="31" Count="0" />
       <LineId Id="34" Count="14" />
       <LineId Id="32" Count="0" />
-      <LineId Id="49" Count="1" />
-      <LineId Id="27" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="97" Count="2" />
     </LineIds>
   </POU>
 </TcPlcObject>
