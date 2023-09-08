@@ -4,8 +4,22 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	
-	OUT_T AT %Q* : BOOL;
-
+	//HMI Stuff
+	HMI_OUT_Digital 	: ARRAY[0..19] OF BOOL;
+	HMI_OUT_Analog 		: ARRAY[0..10] OF INT;
+	
+	HMI_IN_Digital 		: ARRAY[0..9] OF BOOL;
+	HMI_IN_Analog 		: ARRAY[0..19] OF INT;
+	
+	HMI_IN_Temp 		: ARRAY[0..4] OF REAL;
+	
+	
+	
+	//PLC Stuff
+	PLC_OUT_Digital 	AT %Q* 		: ARRAY[0..19] OF BOOL;
+	PLC_IN_Digital 		AT %I*		: ARRAY[0..9] OF BOOL;
+	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
