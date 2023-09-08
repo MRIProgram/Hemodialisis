@@ -19,14 +19,46 @@ VAR
 	PLC_OUT_Digital 	AT %Q* 		: ARRAY[0..19] OF BOOL;
 	PLC_IN_Digital 		AT %I*		: ARRAY[0..9] OF BOOL;
 	
+	//Modbus
+	Master			: ModbusRtuMasterV2_KL6x22B;
+	ReadErrorId 	: MODBUS_ERRORS;
+	WriteErrorId 	: MODBUS_ERRORS; 
+	
+	ExecWrite : BOOL;
+	WriteVal : ARRAY[0..9] OF INT := [1,2,3,4,5,6,7,8,9,10];
+	
+	
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+Master.WriteRegs(
+	UnitID:= 1, 
+	Quantity:= 10, 
+	MBAddr:= 0, 
+	cbLength:= SIZEOF(WriteVal), 
+	pMemoryAddr:= ADR(WriteVal), 
+	AuxQuantity:= , 
+	AuxMBAddr:= , 
+	AuxcbLength:= , 
+	pAuxMemoryAddr:= , 
+	Execute:= ExecWrite, 
+	Timeout:= , 
+	BUSY=> , 
+	Error=> , 
+	ErrorId=> , 
+	cbRead=> );
+	
+	
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="34" Count="14" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="49" Count="1" />
+      <LineId Id="27" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
