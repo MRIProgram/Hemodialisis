@@ -39,7 +39,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{2164B600-82FE-4240-8137-E5B64C11074E}" Name="HD_PLC" PrjFilePath="HD_PLC\HD_PLC.plcproj" TmcFilePath="HD_PLC\HD_PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HD_PLC\HD_PLC.tmc" TmcHash="{AE3E565C-9A83-DFFD-370B-65DFF3C5E3C6}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HD_PLC\HD_PLC.tmc" TmcHash="{D4656DCE-87E8-1D97-7677-A30E34CBA8BC}">
 					<Name>HD_PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -59,9 +59,19 @@
 							<Priority>20</Priority>
 							<CycleTime>10000000</CycleTime>
 						</Context>
+						<Context>
+							<Id>1</Id>
+							<Name>VISU_TASK</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>30</Priority>
+							<CycleTime>200000000</CycleTime>
+						</Context>
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+						<TaskPouOid Prio="30" OTCID="#x08502002"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>
