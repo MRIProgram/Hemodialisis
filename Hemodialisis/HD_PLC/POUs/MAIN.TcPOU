@@ -28,6 +28,16 @@ END_VAR
     <Implementation>
       <ST><![CDATA[CLK_MUX := NOT(CLK_MUX);
 
+IO_Out[8] := HMI_Global.HMI_IN_Digital[0];
+HMI_Global.HMI_OUT_Analog[0] := AnalogRead[9];
+
+IF AnalogRead[9] > 1000 THEN
+	HMI_Global.HMI_OUT_Digital[0] := TRUE;
+ELSE
+	HMI_Global.HMI_OUT_Digital[0] := FALSE;
+END_IF
+ 
+
 MUX_FUNC(
 	CLK := CLK_MUX,
 	ADC_INPUT := ADC_Val,
@@ -51,6 +61,15 @@ MUX_FUNC(
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="205" Count="0" />
+      <LineId Id="230" Count="0" />
+      <LineId Id="229" Count="0" />
+      <LineId Id="231" Count="0" />
+      <LineId Id="234" Count="0" />
+      <LineId Id="233" Count="0" />
+      <LineId Id="235" Count="0" />
+      <LineId Id="237" Count="1" />
+      <LineId Id="236" Count="0" />
+      <LineId Id="232" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="144" Count="0" />
       <LineId Id="154" Count="1" />

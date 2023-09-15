@@ -84,17 +84,17 @@
 	<Project ProjectGUID="{9D945135-C723-4A03-B865-4DD4A63A7DBA}" TargetNetId="5.110.205.243.1.1" ShowHideConfigurations="#x106">
 		<System>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+				<Task Id="3" Priority="20" CycleTime="10000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="4" Priority="30" CycleTime="2000000" AmsPort="351" DisableFpExceptions="true" AdtTasks="true">
+				<Task Id="4" Priority="30" CycleTime="200000" AmsPort="351" DisableFpExceptions="true" AdtTasks="true">
 					<Name>VISU_TASK</Name>
 				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{2164B600-82FE-4240-8137-E5B64C11074E}" Name="HD_PLC" PrjFilePath="HD_PLC\HD_PLC.plcproj" TmcFilePath="HD_PLC\HD_PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HD_PLC\HD_PLC.tmc" TmcHash="{EFD25705-2DCF-E24C-1CF6-30CAC7D2D9A1}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HD_PLC\HD_PLC.tmc" TmcHash="{037E2699-DF34-1A9C-6885-D7FD422DFD82}">
 					<Name>HD_PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -142,7 +142,7 @@
 								<OTCID>#x02010030</OTCID>
 							</ManualConfig>
 							<Priority>20</Priority>
-							<CycleTime>10000000</CycleTime>
+							<CycleTime>1000000</CycleTime>
 						</Context>
 						<Context>
 							<Id>1</Id>
@@ -151,7 +151,7 @@
 								<OTCID>#x02010040</OTCID>
 							</ManualConfig>
 							<Priority>30</Priority>
-							<CycleTime>200000000</CycleTime>
+							<CycleTime>20000000</CycleTime>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
@@ -1692,6 +1692,7 @@ Bit1: Value smaller than Limit2]]></Comment>
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^HD_PLC^HD_PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 10 (EL2008-0015)">
 				<Link VarA="PlcTask Outputs^MAIN.IO_Out[16]" VarB="Channel 1^Output"/>
