@@ -30,6 +30,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\MUX_ADC.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\SYSTEM.TcPOU">
       <SubType>Code</SubType>
     </Compile>

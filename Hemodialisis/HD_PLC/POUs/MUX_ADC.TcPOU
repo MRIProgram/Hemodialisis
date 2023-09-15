@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MUX_ADC" Id="{6e85e4dd-135c-4c09-af67-d0b75cdc18aa}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK MUX_ADC
+VAR_INPUT
+	CLK : BOOL;
+	ADC_INPUT : INT;
+END_VAR
+VAR_OUTPUT
+	SELLECT : ARRAY[0..4] OF BOOL;
+	ADC_OUTPUT : ARRAY[0..31] OF INT;
+END_VAR
+VAR
+	
+	CNT_MUX : UINT;	
+	PREV_CLK : BOOL;
+	CS : ARRAY[0..4] OF BOOL;
+	ADC_TEMP : ARRAY[0..31] OF INT;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SELLECT := CS;
+ADC_OUTPUT := ADC_TEMP;
+
+
+IF (PREV_CLK=FALSE AND CLK=TRUE) THEN
+	
+	ADC_TEMP[CNT_MUX] := ADC_INPUT;	
+
+	CNT_MUX := CNT_MUX + 1;
+	IF CNT_MUX > 31 THEN
+		CNT_MUX := 0;
+	END_IF
+	
+	CS[0] := UINT_TO_BOOL(CNT_MUX AND 16#01);
+	CS[1] := UINT_TO_BOOL(CNT_MUX AND 16#02);
+	CS[2] := UINT_TO_BOOL(CNT_MUX AND 16#04);
+	CS[3] := UINT_TO_BOOL(CNT_MUX AND 16#08);
+	CS[4] := UINT_TO_BOOL(CNT_MUX AND 16#10);
+	
+	
+END_IF 
+
+PREV_CLK := CLK;
+]]></ST>
+    </Implementation>
+    <LineIds Name="MUX_ADC">
+      <LineId Id="9" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="28" Count="2" />
+      <LineId Id="45" Count="5" />
+      <LineId Id="33" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

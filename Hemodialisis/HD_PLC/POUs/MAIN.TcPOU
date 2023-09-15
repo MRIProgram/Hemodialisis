@@ -1,18 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="MAIN" Id="{d0f4a2d8-aed2-4597-a76e-704570121f0f}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{57ea5a5e-9fa6-4fd0-90ff-f75dd399de50}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	
-	OUT_T AT %Q* : BOOL;
+	CountScale : BYTE;
+
+	Mux_Select AT %Q*: ARRAY[0..4] OF BOOL;	
+	ADC_Val AT %I* : INT; 
+	AnalogRead : ARRAY[0..31] OF INT;
+	CLK_MUX : BOOL;
+	
+	MUX_FUNC : MUX_ADC;
+
+	IO_Out AT %Q* : ARRAY[0..31] OF BOOL;
+	IO_In AT %I* : ARRAY[0..16] OF BOOL;
+	
+	SensAnalaog AT %I* : ARRAY[0..3] OF INT;
+	
+	RTD_ADC AT %I* : INT;
+	RTD_Temp : REAL;
+	
+	
 
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[CLK_MUX := NOT(CLK_MUX);
+
+MUX_FUNC(
+	CLK := CLK_MUX,
+	ADC_INPUT := ADC_Val,
+	SELLECT => Mux_Select,
+	ADC_OUTPUT => AnalogRead	
+);
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
+      <LineId Id="205" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="154" Count="1" />
+      <LineId Id="185" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="165" Count="1" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="153" Count="0" />
+      <LineId Id="145" Count="5" />
+      <LineId Id="42" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
