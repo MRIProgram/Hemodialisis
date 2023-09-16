@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SYSTEM" Id="{ec2b8c0a-e8a6-4c50-8d63-8b8bda8e76b5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM SYSTEM
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[HMI_Global.fbGetLocalSystemTime(
+	sNetID:= , 
+	bEnable:= TRUE, 
+	dwCycle:= 1, 
+	dwOpt:= , 
+	tTimeout:= , 
+	bValid=> , 
+	systemTime=> , 
+	tzID=> );
+	
+HMI_Global.sSystemDateTime := SYSTEMTIME_TO_STRING(HMI_Global.fbGetLocalSystemTime.systemTime);
+HMI_Global.sSystemDate := MID(STR:= HMI_Global.sSystemDateTime, LEN:=10, POS:=1);
+HMI_Global.sSystemTime := MID(STR:= HMI_Global.sSystemDateTime, LEN:=8, POS:=12);
+]]></ST>
+    </Implementation>
+    <LineIds Name="SYSTEM">
+      <LineId Id="6" Count="7" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
