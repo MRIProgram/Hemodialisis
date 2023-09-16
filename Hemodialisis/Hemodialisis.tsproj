@@ -13,7 +13,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{2164B600-82FE-4240-8137-E5B64C11074E}" Name="HD_PLC" PrjFilePath="HD_PLC\HD_PLC.plcproj" TmcFilePath="HD_PLC\HD_PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HD_PLC\HD_PLC.tmc" TmcHash="{2BC73C25-28EB-47C0-6F09-4C7C847A3AB2}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HD_PLC\HD_PLC.tmc" TmcHash="{46ABCC89-2D08-4EAE-2CB1-93E1FCE3C2CE}">
 					<Name>HD_PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
