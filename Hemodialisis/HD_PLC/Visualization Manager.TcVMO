@@ -572,12 +572,12 @@
         <Type n="VisualManagerViewSettings">{ec9b2ec6-92a2-4856-be72-7866fb274c64}</Type>
       </TypeList>
     </XmlArchive>
-    <TargetVisu Name="TargetVisualization" Id="{1da10afb-38de-4c71-a0cf-cba5e4676a00}">
+    <TargetVisu Name="TargetVisualization" Id="{c87544bc-f36e-4a50-bf0d-b16188e47b52}">
       <XmlArchive>
         <Data>
           <o xml:space="preserve" t="TargetVisualizationObject">
             <o n="ViewSettings" t="TargetVisualizationViewSettings">
-              <v n="StartVisu">"Visualization"</v>
+              <v n="StartVisu">"MainScreen"</v>
               <n n="HtmFileName" />
               <v n="UpdateRate">200</v>
               <v n="CommBufferSize">50000</v>

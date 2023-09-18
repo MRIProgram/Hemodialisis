@@ -327,6 +327,11 @@ RELEASE"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>
+              <v n="TextID">"400"</v>
+              <v n="TextDefault">"HEMODIALYSIS"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
               <v n="TextID">"102"</v>
               <v n="TextDefault">"HMI STATE"</v>
               <l n="LanguageTexts" t="ArrayList" />
@@ -334,6 +339,27 @@ RELEASE"</v>
             <o>
               <v n="TextID">"583"</v>
               <v n="TextDefault">"INPUT"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"17"</v>
+              <v n="TextDefault">"Input"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"280"</v>
+              <v n="TextDefault">"Input 
+Digital"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"439"</v>
+              <v n="TextDefault">"Input Digital"</v>
+              <l n="LanguageTexts" t="ArrayList" />
+            </o>
+            <o>
+              <v n="TextID">"212"</v>
+              <v n="TextDefault">"InputDigital"</v>
               <l n="LanguageTexts" t="ArrayList" />
             </o>
             <o>

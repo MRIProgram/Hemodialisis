@@ -7,8 +7,8 @@ VAR_GLOBAL
 	HMI_OUT_Digital 	: ARRAY[0..31] OF BOOL;
 	HMI_OUT_Analog 		: ARRAY[0..31] OF INT;
 	
-	HMI_IN_Digital 		: ARRAY[0..20] OF BOOL;
-	HMI_IN_Analog 		: ARRAY[0..20] OF INT;
+	HMI_IN_Digital 		: ARRAY[0..31] OF BOOL;
+	HMI_IN_Analog 		: ARRAY[0..31] OF INT;
 	
 	HMI_IN_Temp 		: ARRAY[0..4] OF REAL;
 	
@@ -22,7 +22,7 @@ VAR_GLOBAL
 	HMI_ArrayGraph1 : ARRAY[0..1] OF INT;
 	HMI_ArrayGraph2 : ARRAY[0..1] OF INT;
 	HMI_ArrayGraph3 : ARRAY[0..1] OF INT;
-	
+
 END_VAR
 
 ]]></Declaration>
